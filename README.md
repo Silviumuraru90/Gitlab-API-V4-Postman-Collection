@@ -1,7 +1,7 @@
 # Gitlab APIs (V4) - Postman_collection
 
 <div align="center">
-  <img src="MEDIA/gitlab_api.png">
+  <img src="Media/gitlab_api.png">
 </div>
 
 <br>
