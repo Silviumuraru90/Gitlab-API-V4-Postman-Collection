@@ -1,0 +1,2894 @@
+{
+	"info": {
+		"_postman_id": "054575c0-d754-43a2-b538-fe75a0365320",
+		"name": "GITLAB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "99313333"
+	},
+	"item": [
+		{
+			"name": "BRANCHES",
+			"item": [
+				{
+					"name": "Branches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/branches",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/branches/<branch_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"branches",
+								"<branch_name>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/branches?branch=<branch_name>&ref=<source_branch>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"branches"
+							],
+							"query": [
+								{
+									"key": "branch",
+									"value": "<branch_name>"
+								},
+								{
+									"key": "ref",
+									"value": "<source_branch>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/branches/<branch_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"branches",
+								"<branch_name>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merged Branches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/merged_branches",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"merged_branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected Branches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_branches",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_branches"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected Branch or Wildcard Protected Branches",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_branches/<branch_name_or_wildcard>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_branches",
+								"<branch_name_or_wildcard>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected Branch(es)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_branches?name=<branch_name_or_wildcard>&push_access_level=<integer>&merge_access_level=<integer>&unprotect_access_level=<integer>&allow_force_push=<boolean>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_branches"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "<branch_name_or_wildcard>"
+								},
+								{
+									"key": "push_access_level",
+									"value": "<integer>"
+								},
+								{
+									"key": "merge_access_level",
+									"value": "<integer>"
+								},
+								{
+									"key": "unprotect_access_level",
+									"value": "<integer>"
+								},
+								{
+									"key": "allow_force_push",
+									"value": "<boolean>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected Branch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_branches/<branch_name>?allow_force_push=<boolean>&code_owner_approval_required=<boolean>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_branches",
+								"<branch_name>"
+							],
+							"query": [
+								{
+									"key": "allow_force_push",
+									"value": "<boolean>"
+								},
+								{
+									"key": "code_owner_approval_required",
+									"value": "<boolean>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unprotected Branch(es)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_branches/<branch_name_or_wildcard>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_branches",
+								"<branch_name_or_wildcard>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "COMMITS",
+			"item": [
+				{
+					"name": "Commits",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/commits/",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"commits",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/commits/<branch_name_or_sha>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"commits",
+								"<branch_name_or_sha>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commit's References",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/commits/<sha>/refs?type=all",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"commits",
+								"<sha>",
+								"refs"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "all"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commit's Diff",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/commits/<branch_name_or_sha>/diff",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"commits",
+								"<branch_name_or_sha>",
+								"diff"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GROUPS",
+			"item": [
+				{
+					"name": "Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group(s) by Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups?search=<group_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "<group_name>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>?name=<group_name>&path=<group_path>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "<group_name>"
+								},
+								{
+									"key": "path",
+									"value": "<group_path>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's Subgroups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/subgroups",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"subgroups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's Descendent Groups",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/descendant_groups",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"descendant_groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's Projects",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/projects",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's Shared Projects",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/projects/shared",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"projects",
+								"shared"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's Push Rules",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/push_rule",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"push_rule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's Members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/members/all",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"members",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Member's Access",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/members/<user_id>?access_level=<integer>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"members",
+								"<user_id>"
+							],
+							"query": [
+								{
+									"key": "access_level",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/members/<user_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"members",
+								"<user_id>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PROJECTS",
+			"item": [
+				{
+					"name": "Projects",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project(s) by Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects?search=<project_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "<project_name>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project's Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/users",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project's Members",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/members/all",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"members",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Member's Access",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/members/<user_id>?access_level=<integer>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"members",
+								"<user_id>"
+							],
+							"query": [
+								{
+									"key": "access_level",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Member",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/members/<user_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"members",
+								"<user_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project's Push Rules",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/push_rule",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"push_rule"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Trigger Tokens",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/triggers",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"triggers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MERGE REQUESTS",
+			"item": [
+				{
+					"name": "Merge Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/merge_requests/<merge_request_iid>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"merge_requests",
+								"<merge_request_iid>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project's MRs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/merge_requests?state=<all, opened, closed, locked or merged>&labels=<comma_separated_array>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"merge_requests"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "<all, opened, closed, locked or merged>"
+								},
+								{
+									"key": "labels",
+									"value": "<comma_separated_array>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group's MRs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/merge_requests?state=<all, opened, closed, locked or merged>&labels=<comma_separated_array>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"merge_requests"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "<all, opened, closed, locked or merged>"
+								},
+								{
+									"key": "labels",
+									"value": "<comma_separated_array>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Commit's MRs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/commits/<sha>/merge_requests",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"commits",
+								"<sha>",
+								"merge_requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge Request's Diffs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/merge_requests/<merge_request_iid>/diffs",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"merge_requests",
+								"<merge_request_iid>",
+								"diffs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/merge_requests/<merge_request_iid>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"merge_requests",
+								"<merge_request_iid>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Merge a Merge Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/merge_requests/<merge_request_iid>/merge",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"merge_requests",
+								"<merge_request_iid>",
+								"merge"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PIPELINES",
+			"item": [
+				{
+					"name": "Pipelines",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipelines",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipelines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipelines/<pipeline_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipelines",
+								"<pipeline_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipeline?ref=<branch_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipeline"
+							],
+							"query": [
+								{
+									"key": "ref",
+									"value": "<branch_name>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipelines/<pipeline_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipelines",
+								"<pipeline_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Latest Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipelines/latest",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipelines",
+								"latest"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scheduled Pipelines",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<pipeline_id>/pipeline_schedules",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<pipeline_id>",
+								"pipeline_schedules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scheduled Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<pipeline_id>/pipeline_schedules/<pipeline_schedule_id>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<pipeline_id>",
+								"pipeline_schedules",
+								"<pipeline_schedule_id>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retry Pipeline's Jobs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipelines/<pipeline_id>/retry",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipelines",
+								"<pipeline_id>",
+								"retry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel a Pipeline",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/pipelines/<pipeline_id>/cancel",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"pipelines",
+								"<pipeline_id>",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SEARCH",
+			"item": [
+				{
+					"name": "ADVANCED SEARCH",
+					"item": [
+						{
+							"name": "Scope: projects",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/search?scope=projects&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "projects"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: issues",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/search?scope=issues&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "issues"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: merge requests",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/search?scope=merge_requests&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "merge_requests"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: milestones",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/search?scope=milestones&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "milestones"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: snippet titles",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/search?scope=snippet_titles&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "snippet_titles"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/search?scope=users&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "users"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "GROUP SEARCH",
+					"item": [
+						{
+							"name": "Scope: projects",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/groups/<group_id>/search?scope=projects&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"groups",
+										"<group_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "projects"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: issues",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/groups/<group_id>/search?scope=issues&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"groups",
+										"<group_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "issues"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: merge requests",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/groups/<group_id>/search?scope=merge_requests&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"groups",
+										"<group_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "merge_requests"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: milestones",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/groups/<group_id>/search?scope=milestones&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"groups",
+										"<group_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "milestones"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/groups/<group_id>/search?scope=users&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"groups",
+										"<group_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "users"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PROJECT SEARCH",
+					"item": [
+						{
+							"name": "Scope: issues",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/projects/<project_id>/search?scope=issues&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"projects",
+										"<project_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "issues"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: merge requests",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/projects/<project_id>/search?scope=merge_requests&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"projects",
+										"<project_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "merge_requests"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: milestones",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/projects/<project_id>/search?scope=milestones&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"projects",
+										"<project_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "milestones"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scope: users",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{ACCESS_TOKEN}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{CI_API_V4_URL}}/projects/<project_id>/search?scope=users&search=<search_query>",
+									"host": [
+										"{{CI_API_V4_URL}}"
+									],
+									"path": [
+										"projects",
+										"<project_id>",
+										"search"
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "users"
+										},
+										{
+											"key": "search",
+											"value": "<search_query>"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TAGS",
+			"item": [
+				{
+					"name": "Tags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/tags",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/tags/<tag_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"tags",
+								"<tag_name>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/tags?tag_name=<tag_name>&ref=<branch_name, tag_name or sha>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"tags"
+							],
+							"query": [
+								{
+									"key": "tag_name",
+									"value": "<tag_name>"
+								},
+								{
+									"key": "ref",
+									"value": "<branch_name, tag_name or sha>"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/repository/tags/<tag_name>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"repository",
+								"tags",
+								"<tag_name>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected Tags",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_tags",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protected Tag",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_tags/<tag_name_or_wildcard>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_tags",
+								"<tag_name_or_wildcard>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Protect Tag(s)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"allowed_to_create\" : [\n      {\n         \"user_id\" : \"<user_id>\"\n      },\n      {\n         \"access_level\" : <integer>\n      }\n   ],\n   \"create_access_level\" : <integer>,\n   \"name\" : \"<branch_name_or_wildcard>\"\n}"
+						},
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_tags",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_tags"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unprotect Tag(s)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/protected_tags/<branch_name_or_wildcard>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"protected_tags",
+								"<branch_name_or_wildcard>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VARIABLES (Group)",
+			"item": [
+				{
+					"name": "Variables",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/variables",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"variables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/variables/<VAR_NAME>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"variables",
+								"<VAR_NAME>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"<NEW_VARIABLE>\",\n    \"value\": \"<new value>\",\n    \"variable_type\": \"env_var\",\n    \"protected\": false,\n    \"masked\": false,\n    \"raw\": false,\n    \"environment_scope\": \"*\"\n}"
+						},
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/variables",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"variables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\": \"<NEW_VARIABLE>\",\n    \"value\": \"<updated value>\",\n    \"variable_type\": \"env_var\",\n    \"protected\": true,\n    \"masked\": true,\n    \"raw\": true,\n    \"environment_scope\": \"*\"\n}"
+						},
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/variables/<VAR_NAME>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"variables",
+								"<VAR_NAME>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/groups/<group_id>/variables/<VAR_NAME>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"groups",
+								"<group_id>",
+								"variables",
+								"<VAR_NAME>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VARIABLES (Project)",
+			"item": [
+				{
+					"name": "Variables",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/variables",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"variables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/variables/<VAR_NAME>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"variables",
+								"<VAR_NAME>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"variable_type\": \"env_var\",\n    \"key\": \"<NEW_VARIABLE>\",\n    \"value\": \"<new value>\",\n    \"protected\": false,\n    \"masked\": false,\n    \"raw\": false,\n    \"environment_scope\": \"*\"\n}"
+						},
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/variables",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"variables"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variable",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"variable_type\": \"env_var\",\n    \"key\": \"<NEW_VARIABLE>\",\n    \"value\": \"<updated value>\",\n    \"protected\": true,\n    \"masked\": false,\n    \"raw\": false,\n    \"environment_scope\": \"*\"\n}"
+						},
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/variables/<VAR_NAME>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"variables",
+								"<VAR_NAME>"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Variables",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/projects/<project_id>/variables/<VAR_NAME>",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"projects",
+								"<project_id>",
+								"variables",
+								"<VAR_NAME>"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "VERSION",
+			"item": [
+				{
+					"name": "Version",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{ACCESS_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{CI_API_V4_URL}}/version",
+							"host": [
+								"{{CI_API_V4_URL}}"
+							],
+							"path": [
+								"version"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
